@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha"
   },
+  "repository": "https://github.com/Howard3/node-simple-data-anonymizer.git",
   "author": "Howard D. Lince III",
   "license": "ISC",
   "devDependencies": {
