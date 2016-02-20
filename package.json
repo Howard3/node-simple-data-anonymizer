@@ -1,6 +1,6 @@
 {
   "name": "simple-data-anonymizer",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A simple module which will help you anonymize your data, useful when exporting sensitive data to third party services such as analytic services.",
   "main": "index.js",
   "scripts": {
