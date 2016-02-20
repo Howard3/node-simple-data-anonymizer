@@ -1,5 +1,20 @@
 "use strict";
 
+/**
+ * Simple repeat function since String.prototype.repeat is not available on older versions of node.js
+ *
+ * @param {String} string - the string to repeat
+ * @param {Number} times - the number of times to repeat the string
+ * @returns {String} - the output
+ */
+function repeat(string, times) {
+	var i, out = '';
+	for (i = 0; i < times; i++ ) {
+		out += string;
+	}
+	return out;
+}
+
 module.exports.string = function stringAnonymizer(string_to_anonymize, beginning, end) {
 	var filler = '', positions = [ beginning, end ];
 
@@ -56,7 +71,7 @@ module.exports.string = function stringAnonymizer(string_to_anonymize, beginning
 
 	if (end - beginning > 0) {
 		// For each of the characters we remove, add an asterisk
-		filler = '*'.repeat(end - beginning);
+		filler = repeat('*', end - beginning);
 	} else {
 		// adjust the beginning position since patching the string below will end up with a duplicated joining character
 		beginning -= 1;
