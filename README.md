@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Howard3/node-simple-data-anonymizer.svg?branch=master)](https://travis-ci.org/Howard3/node-simple-data-anonymizer)
+
 # Introduction
 
 This module is extremely simple and attempts to do nothing more than one task. It has no dependencies unless you're 
