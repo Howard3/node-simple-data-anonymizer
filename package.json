@@ -1,0 +1,16 @@
+{
+  "name": "simple-data-anonymizer",
+  "version": "1.0.0",
+  "description": "A simple module which will help you anonmize your data, useful when exporting sensitive data to third party services such as analytic services.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha"
+  },
+  "author": "Howard D. Lince III",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5"
+  }
+}
