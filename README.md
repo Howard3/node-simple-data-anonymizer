@@ -15,12 +15,16 @@ The only function available accepts three arguments: `stringAnonymizer(string_to
 
 The _beginning_ and _end_ arguments define where the anonymizer should leave data visible.
 
+**beginning** and **end** arguments are absolute. The particular implication here is that for **end** if you wish to 
+keep only the last 4 characters you should supply `-4`
 
 ### Simple Usage
 ```javascript
 var stringAnonymizer = require('simple-data-anonymizer').string;
 
 stringAnonymizer('foobaruser@emailservice.com', 2, '@'); // returns fo********@emailservice.com
+stringAnonymizer('foobaruser@emailservice.com', '@', -4); // returns foobaruser@************.com
+stringAnonymizer('foobaruser@emailservice.com', 4, -4); // returns foob*******************.com
 ```
 
 ### More Advanced usage
@@ -29,6 +33,19 @@ position identifier by order of the array:
 
 ```javascript
 stringAnonymizer('foobaruser@emailservice.com', ['-', 'bar', 2], '@'); // returns foobar****@emailservice.com
+stringAnonymizer('foobaruser@emailservice.com', ['s', 'bar', 2], ['mail', '.', -4]); // returns foobarus****mailservice
+.com
+```
+
+The anonymizer will use the first occurrence of the character for the _beginning_ position and the last occurrence 
+for the _end_ position. For example:
+
+```javascript
+var string = 'abc.abc.abc.abc';
+
+stringAnonymizer(string, 3, '.');   // returns abc********.abc
+stringAnonymizer(string, '.', '.'); // returns abc.*******.abc
+stringAnonymizer(string, '.', -3);  // returns abc.********abc
 ```
 
 The _begininng_ and _end_ arguments are capable of receiving an ordered list to look through.

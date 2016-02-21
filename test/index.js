@@ -54,6 +54,12 @@ describe('simple data anonymizer', function () {
 					beginning: '@',
 					end: '@',
 					expect: 'foo@bar.com'
+				},
+				{
+					string: 'abc.abc.abc.abc',
+					beginning: '.',
+					end: '.',
+					expect: 'abc.*******.abc'
 				}
 			];
 
