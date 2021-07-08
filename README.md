@@ -33,8 +33,7 @@ position identifier by order of the array:
 
 ```javascript
 stringAnonymizer('foobaruser@emailservice.com', ['-', 'bar', 2], '@'); // returns foobar****@emailservice.com
-stringAnonymizer('foobaruser@emailservice.com', ['s', 'bar', 2], ['mail', '.', -4]); // returns foobarus****mailservice
-.com
+stringAnonymizer('foobaruser@emailservice.com', ['s', 'bar', 2], ['mail', '.', -4]); // returns foobarus****mailservice.com
 ```
 
 The anonymizer will use the first occurrence of the character for the _beginning_ position and the last occurrence 
